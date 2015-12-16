@@ -1,0 +1,7 @@
+source "https://rubygems.org"
+gem "rspec"
+gem "page-object"
+gem "faker"
+gem "data_magic"
+gem "require_all"
+gem "cucumber", "1.3" 
