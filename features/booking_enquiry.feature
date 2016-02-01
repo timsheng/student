@@ -8,5 +8,5 @@ Feature: Booking Enquiry
     When I go to a property page
     And I click on the room type
     And I book an enquiry
-    And I sign-up in the popup
-    Then check in the booking system for the added enquiry
+    And I create password in the popup
+    Then I should see a new enquiry in the booking system

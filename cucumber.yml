@@ -1,1 +1,2 @@
-default: --format PrettyFace::Formatter::Html --out results/index.html
+default: --format pretty
+pretty_face: --format PrettyFace::Formatter::Html --out results/index.html
