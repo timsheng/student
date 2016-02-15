@@ -6,7 +6,8 @@ Feature: Booking Enquiry
 
   Scenario: Booking Enquiry as a new user
     When I go to a property page
-    And I click on the room type
-    And I book an enquiry
-    And I create password in the popup
-    Then I should see a new enquiry in the booking system
+#    And I click on the first enquiry now button
+#    And I fill in personal info
+#    And I create password in the popup dialog
+    And I complete the making of an enquiry
+    Then I should find new user in the first enquiry result in the booking system

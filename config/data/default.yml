@@ -1,0 +1,7 @@
+personal_info:
+  firstname: ~first_name
+  lastname: ~last_name
+  email: ~email_address
+  mobile: ~phone_number
+
+create_password: abc20052614

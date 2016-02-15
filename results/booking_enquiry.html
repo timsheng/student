@@ -14,7 +14,7 @@
 
     <div style="float:left; clear:both;">
       <div class="header_logo">
-        <img src="images/face.png" width="200" />
+        <img src="images/logo.png" width="200" />
       </div>
       <div class="header_description" >
           <h2 class="results">Feature Results:  Booking Enquiry</h2>
@@ -27,8 +27,8 @@
             <td>duration:</td>
           </tr>
           <tr>
-            <td>Thursday December 17, 2015 at 14:47:09</td>
-            <td>0m3.439s</td>
+            <td>Sunday February 14, 2016 at 16:36:23</td>
+            <td>0m30.065s</td>
           </tr>
         </table>  
           <pre class="description run_stats">Story<br/>
@@ -55,21 +55,21 @@ So they can live overseas around the school</pre>
           <td>Scenarios</td>
           <td>1</td>
           <td>0 <span class="percentage">(0.0%)</span></td>
-          <td>0 <span class="percentage">(0.0%)</span></td>
-          <td>0 <span class="percentage">(0.0%)</span></td>
           <td>1 <span class="percentage">(100.0%)</span></td>
           <td>0 <span class="percentage">(0.0%)</span></td>
-          <td>0m3.439s</td>
+          <td>0 <span class="percentage">(0.0%)</span></td>
+          <td>0 <span class="percentage">(0.0%)</span></td>
+          <td>0m30.065s</td>
         </tr>
         <tr class="summary_row_header">
           <td>Steps</td>
-          <td>5</td>
+          <td>3</td>
+          <td>1 <span class="percentage">(33.3%)</span></td>
+          <td>1 <span class="percentage">(33.3%)</span></td>
+          <td>1 <span class="percentage">(33.3%)</span></td>
           <td>0 <span class="percentage">(0.0%)</span></td>
           <td>0 <span class="percentage">(0.0%)</span></td>
-          <td>0 <span class="percentage">(0.0%)</span></td>
-          <td>5 <span class="percentage">(100.0%)</span></td>
-          <td>0 <span class="percentage">(0.0%)</span></td>
-          <td>0m0.000s</td>
+          <td>0m8.069s</td>
         </tr>
 
 
@@ -85,10 +85,10 @@ So they can live overseas around the school</pre>
 	      <br />
 	      <table cellspacing="0" cellpadding="7" class="scenario" width="100%">
 	      <tr >
-		  <th colspan="2" class="undefined">Booking Enquiry as a new user</th>
+		  <th colspan="2" class="failed">Booking Enquiry as a new user</th>
 		</tr>
 		  <tr class="borderSeparator">
-		  <td class="image_tag"> <img src="images/undefined.png" alt="undefined" title="undefined"></td>
+		  <td class="image_tag"> <img src="images/passed.png" alt="passed" title="passed"></td>
 		  <td class="">
    
 		  When  I go to a property page
@@ -96,40 +96,50 @@ So they can live overseas around the school</pre>
 		  </td>
 		  </tr>
 		  <tr class="borderSeparator">
-		  <td class="image_tag"> <img src="images/undefined.png" alt="undefined" title="undefined"></td>
+		  <td class="image_tag"> <img src="images/failed.png" alt="failed" title="failed"></td>
 		  <td class="">
    
-		  When  I click on the room type
+		  When  I complete the making of an enquiry
+	<table>
+		<tr class="error">
+			<td class="message">
+				<strong><pre>undefined method `merge&#39; for &quot;abc20052614&quot;:String (NoMethodError)</pre></strong>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<pre class="ruby"><strong>./features/support/pages/storm/createpassword_dialog.rb
+</strong><code><span class="linenum">12</span>  <span class="keyword">def </span><span class="method">create_password_in_dialog</span><span class="punct">(</span><span class="ident">data</span> <span class="punct">=</span> <span class="punct">{})</span>
+<span class="linenum">13</span>    <span class="comment"># populate_page_with DEFAULT_DATA.merge(data)</span>
+<span class="offending"><span class="linenum">14</span>    <span class="ident">populate_page_with</span> <span class="ident">data_for</span><span class="punct">(</span><span class="symbol">:create_password</span><span class="punct">,</span><span class="ident">data</span><span class="punct">)</span></span>
+<span class="linenum">15</span>    <span class="ident">save_password_btn</span>
+<span class="linenum">16</span>  <span class="keyword">end</span></code></pre>
+			</td>
+		</tr>
+		<tr >
+			<td class="detail">
+					<pre>./features/support/pages/storm/createpassword_dialog.rb:14:in `create_password_in_dialog&#39;
+./features/step_definitions/booking_enquiry_steps.rb:27:in `/^I complete the making of an enquiry$/&#39;
+features/booking_enquiry.feature:12:in `And I complete the making of an enquiry&#39;</pre>
+			</td>
+		</tr>
+	</table>
 
 		  </td>
 		  </tr>
 		  <tr class="borderSeparator">
-		  <td class="image_tag"> <img src="images/undefined.png" alt="undefined" title="undefined"></td>
-		  <td class="">
+		  <td class="image_tag"> <img src="images/skipped.png" alt="skipped" title="skipped"></td>
+		  <td class="skipped_step">
    
-		  When  I book an enquiry
-
-		  </td>
-		  </tr>
-		  <tr class="borderSeparator">
-		  <td class="image_tag"> <img src="images/undefined.png" alt="undefined" title="undefined"></td>
-		  <td class="">
-   
-		  When  I create password in the popup
-
-		  </td>
-		  </tr>
-		  <tr class="borderSeparator">
-		  <td class="image_tag"> <img src="images/undefined.png" alt="undefined" title="undefined"></td>
-		  <td class="">
-   
-		  Then  I should see a new enquiry in the booking system
+		  Then  I should find new user in the first enquiry result in the booking system
 
 		  </td>
 		  </tr>
 	      </table>
 	    
         <div class="img_container">
+              <a href='' onclick="img=document.getElementById('img_0'); img.style.display = (img.style.display == 'none' ? 'block' : 'none');return false">Screenshot</a><br />
+		          <img id='img_0' style='display: none' src='images/error-CreatePasswordDialog-2016-02-14_16-36-51.png'/>
 	        <br /><br />
 	      </div>
       </div>

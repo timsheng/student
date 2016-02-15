@@ -4,20 +4,13 @@ require 'cucumber/rake/task'
 
 Cucumber::Rake::Task.new(:features) do |t|
   t.profile = 'default'
+  # t.cucumber_opts = "features --format pretty"
 end
+
+Cucumber::Rake::Task.new(:pretty_face) do |t|
+  t.profile = 'pretty_face'
+end
+
+
 
 task :default => :features
-
-
-namespace :features do
-  Cucumber::Rake::Task.new(:watir_webdriver,'Run features with Watir') do |t|
-    t.profile = 'watir'
-  end
-
-  Cucumber::Rake::Task.new(:selenium_webdriver,'Run features with Selenium') do |t|
-    t.profile = 'selenium'
-  end
-
-  desc 'Run all features using watir and selenium'
-  task :all => [:watir_webdriver, :selenium_webdriver]
-end
