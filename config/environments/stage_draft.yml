@@ -1,0 +1,5 @@
+base_url: https://oslqa:m2WackNUHbAqHz51@storm-frontend-cn-draft.dandythrust.com
+booking:
+  base_url: https://oslqa:m2WackNUHbAqHz51@bookings.stage.overseasstudentliving.com
+  username: tim.sheng
+  password: 111111
