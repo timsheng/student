@@ -6,3 +6,10 @@ personal_info:
 
 new_user_popup:
   password: abc20052614
+
+signup:
+  firstname: ~first_name
+  lastname: ~last_name
+  email: ~email_address
+  mobile: ~phone_number
+  password: abc20052614

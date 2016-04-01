@@ -2,7 +2,7 @@ Feature: Booking Enquiry
 
   As a student.com user
   I want to booking enquiry
-  So they can live overseas around the school
+  So I can live overseas around the school
 
   Scenario: Booking Enquiry as a new user
     When I go to a property page
