@@ -8,10 +8,5 @@ class PropertyPage
   def click_first_enquiry_now
     enquiry_now_elements[FIRST_ENQUIRY_NOW].click
   end
-  # def enquiry_now num
-  #   link_element(:css => '.btn.btn-primary-thin', :index => num).click
-  # end
-
-
 
 end

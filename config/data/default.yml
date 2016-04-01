@@ -4,4 +4,5 @@ personal_info:
   email: ~email_address
   mobile: ~phone_number
 
-create_password: abc20052614
+new_user_popup:
+  password: abc20052614

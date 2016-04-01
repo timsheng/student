@@ -3,11 +3,6 @@ module Booking
     include PageObject
     page_url FigNewton.booking.base_url
 
-    # DEFAULT_DATA = {
-    #   'username' => 'tim.sheng',
-    #   'password' => '111111'
-    # }
-
     text_field :username, :id => 'username'
     text_field :password, :id => 'password'
     button :login_btn, :id => '_submit'
