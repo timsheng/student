@@ -6,4 +6,4 @@ Feature: Sign Up student.com
   Scenario: Sign Up cn.student.com
     Given I'm in sign up page
     When I fill in all required fields and submit
-    Then I can find account icon on the header
+    Then I can find redirecting included in the page
