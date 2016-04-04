@@ -4,7 +4,16 @@ personal_info:
   email: ~email_address
   mobile: ~phone_number
 
+existing_user_info:
+  firstname: tim
+  lastname: auto+1
+  email: tim.auto+1@student.com
+  mobile: 18616177661
+
 new_user_popup:
+  password: abc20052614
+
+existing_user_popup:
   password: abc20052614
 
 signup:
