@@ -3,4 +3,14 @@ class HomePage
   page_url "#{FigNewton.base_url}"
 
   link :login_link , :href => "/my-account/login"
+
+  text_field :search_hero_banner, :css => "div.search-area>form.search-form>#s"
+
+  unordered_list :search_result_for_city, :css => ".suggest-group.city"
+  unordered_list :search_result_for_university, :css => ".suggest-group.university"
+  unordered_list :search_result_for_property, :css => ".suggest-group.property"
+
+  def search_keywords_in_hero_banner name
+    self.search_hero_banner = name
+  end
 end

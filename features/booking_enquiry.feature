@@ -12,7 +12,6 @@ Feature: Booking Enquiry
 #    And I complete the making of an enquiry
     Then I should find this user in the first enquiry result in the booking system
 
-  @Test
   Scenario: Booking Enquiry as A Existing User
     When I go to a property page
     And I click on the first enquiry now button
