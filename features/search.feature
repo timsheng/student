@@ -6,7 +6,6 @@ Feature: Search Function
     Given I'm on CN homepage
 
   Scenario Outline: Autosuggestion on hero banner for china
-  #  Given I'm on CN homepage
     When I input "<keywords>" in the hero banner searchbox
     Then "<expected_city>" should be available in the city autosuggestion result
     Then "<expected_university>" should be available in the univeristy autosuggestion result
@@ -17,9 +16,8 @@ Feature: Search Function
      |     liverpool     |     利物浦             |     University of Liverpool     |     Victoria Hall Liverpool     |
      |     利物浦         |     利物浦             |     University of Liverpool     |     null                        |
 
-    
+
   Scenario Outline: Autosuggestion on navigation for china
-    #Given I'm on CN homepage
     When I input "<keywords>" in the navigation searchbox
     Then "<expected_city>" should be available in the city autosuggestion result
     Then "<expected_university>" should be available in the univeristy autosuggestion result
