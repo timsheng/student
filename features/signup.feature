@@ -1,4 +1,5 @@
 Feature: Sign Up student.com
+
   As a student
   I want to sign up student.com
   So I can be a member of student.com

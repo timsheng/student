@@ -1,7 +1,9 @@
 Feature: Search Function
+
   As a student
   I hope to be able to seach city , area, university and property
   So I can find the most propriate choice to live aboard
+
   Background:
     Given I'm on CN homepage
 

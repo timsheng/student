@@ -22,3 +22,11 @@ signup:
   email: ~email_address
   mobile: ~phone_number
   password: abc20052614
+
+partner:
+  first_name: ~first_name
+  last_name: ~last_name
+  student_email: ~email_address
+  phone_number: ~phone_number
+  current_school: testschool
+  other_requirement: testinfo
