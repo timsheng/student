@@ -2,8 +2,8 @@ Given(/^I'm on CN homepage$/) do
   visit(HomePage)
 end
 
-When(/^I input "(.*?)" in the searchbox$/) do |city|
-  on(HomePage).search_keywords_in_hero_banner city
+When(/^I input "(.*?)" in the hero banner searchbox$/) do |keywords|
+  on(HomePage).search_keywords_in_hero_banner keywords
 end
 
 Then(/^"(.*?)" should be available in the city autosuggestion result$/) do |expected_city|
@@ -25,5 +25,12 @@ Then(/^"(.*?)" should be available in the property autosuggestion result$/) do |
     end
   rescue Exception
     puts "search result for property will not be shown when searching chinese"
+  end
+end
+
+When(/^I input "(.*?)" in the navigation searchbox$/) do |keywords|
+  on(HomePage) do |page|
+    page.search_icon_element.click
+    page.search_keywords_in_navigation keywords
   end
 end
