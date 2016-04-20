@@ -6,8 +6,8 @@ personal_info:
 
 existing_user_info:
   firstname: tim
-  lastname: auto+1
-  email: tim.auto+1@student.com
+  lastname: auto+2
+  email: tim.auto+2@student.com
   mobile: 18616177661
 
 new_user_popup:

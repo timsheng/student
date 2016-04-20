@@ -14,7 +14,7 @@ Feature: Search Function
     Then "<expected_property>" should be available in the property autosuggestion result
 
      Examples:
-     |     keywords      |     expected_city     |     expected_univeristy         |     expected_property           |
+     |     keywords      |     expected_city     |     expected_university         |     expected_property           |
      |     liverpool     |     利物浦             |     University of Liverpool     |     Victoria Hall Liverpool     |
      |     利物浦         |     利物浦             |     University of Liverpool     |     null                        |
 
@@ -26,6 +26,6 @@ Feature: Search Function
     Then "<expected_property>" should be available in the property autosuggestion result
 
      Examples:
-     |     keywords      |     expected_city     |     expected_univeristy         |     expected_property           |
+     |     keywords      |     expected_city     |     expected_university         |     expected_property           |
      |     liverpool     |     利物浦             |     University of Liverpool     |     Victoria Hall Liverpool     |
      |     利物浦         |     利物浦             |     University of Liverpool     |     null                        |

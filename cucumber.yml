@@ -2,5 +2,5 @@ default: FIG_NEWTON_FILE=stage_draft.yml --no-source --color --format pretty --t
 stage: FIG_NEWTON_FILE=stage.yml --no-source --color --format pretty --tags ~@not_ready
 slow: FIG_NEWTON_FILE=stage_draft.yml --no-source --color --format pretty --tags ~@not_ready --tags @slow
 fast: FIG_NEWTON_FILE=stage_draft.yml --no-source --color --format pretty --tags ~@not_ready --tags ~@slow
-pretty_face: FIG_NEWTON_FILE=stage_draft.yml --format PrettyFace::Formatter::Html --out results/index.html --tags @Test
+pretty_face: FIG_NEWTON_FILE=stage_draft.yml --format PrettyFace::Formatter::Html --out results/index.html 
 html: FIG_NEWTON_FILE=stage_draft.yml --format html --out testresults/report.html
