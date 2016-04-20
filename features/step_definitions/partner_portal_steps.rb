@@ -11,7 +11,6 @@ When(/^I submit enquiry for new student on partner portal$/) do
     page.fill_in_student_details
     page.choose_contact_person
     page.partner_application_submit
-    sleep 10
   end
 end
 
