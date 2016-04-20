@@ -63,7 +63,11 @@ class PartnerPortalPage
 
   def fill_in_student_details
     select_random_city
-    select_random_uni if destination_uni_element.enabled?
+    begin
+    select_random_uni
+    rescue
+      puts "uni is not available"
+    end
     select_random_arrival_month
     select_random_length_of_study
     fill_in_student_info
