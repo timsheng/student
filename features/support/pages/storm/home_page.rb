@@ -20,12 +20,18 @@ class HomePage
 
   link :partner_portal_link, :href => "/p/new-student"
 
+  button :search_button_hero_banner, :css => "form#form-search button#search"
+
   def search_keywords_in_hero_banner keywords
     self.search_hero_banner = keywords
   end
 
   def search_keywords_in_navigation keywords
     self.search_navigation = keywords
+  end
+
+  def search_keywords_in_hero_banner_via_enter_keyboard
+    self.search_button_hero_banner_element.send_keys :enter
   end
 
   def get_random_popular_element

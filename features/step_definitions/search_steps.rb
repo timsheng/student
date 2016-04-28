@@ -46,3 +46,15 @@ end
 Then(/^Corresponding popular text should be available in the SRP or PP$/) do
   expect(@current_page.text).to include @popular_text
 end
+
+When(/^I hit enter keyboard$/) do
+  on(HomePage).search_keywords_in_hero_banner_via_enter_keyboard
+end
+
+Then(/^"(.*?)" should be included in SRP's url$/) do |expected_result|
+  expect(@current_page.current_url).to include expected_result
+end
+
+When(/^I click search button$/) do
+  on(HomePage).search_button_hero_banner
+end
