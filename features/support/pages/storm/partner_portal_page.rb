@@ -34,22 +34,22 @@ class PartnerPortalPage
   button :partner_application_submit, :id => "partner_application_submit"
 
   def select_random_city
-    city = get_random_array_value_without_default self.destination_city_options
+    city = get_random_select_value_without_default self.destination_city_options
     self.destination_city = city
   end
 
   def select_random_uni
-    uni = get_random_array_value_without_default self.destination_uni_options
+    uni = get_random_select_value_without_default self.destination_uni_options
     self.destination_uni = uni
   end
 
   def select_random_arrival_month
-    month = get_random_array_value_without_default self.arrival_month_options
+    month = get_random_select_value_without_default self.arrival_month_options
     self.arrival_month = month
   end
 
   def select_random_length_of_study
-    length = get_random_array_value_without_default self.length_of_study_options
+    length = get_random_select_value_without_default self.length_of_study_options
     self.length_of_study = length
   end
 

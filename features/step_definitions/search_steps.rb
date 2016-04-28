@@ -34,3 +34,15 @@ When(/^I input "(.*?)" in the navigation searchbox$/) do |keywords|
     page.search_keywords_in_navigation keywords
   end
 end
+
+When(/^I click popular text in the popular section$/) do
+  on(HomePage) do |page|
+    popular_element = page.get_random_popular_element
+    @popular_text = popular_element.text
+    popular_element.click
+  end
+end
+
+Then(/^Corresponding popular text should be available in the SRP or PP$/) do
+  expect(@current_page.text).to include @popular_text
+end

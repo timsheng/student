@@ -1,5 +1,5 @@
 class PropertyPage
-  FIRST_ENQUIRY_NOW = 1
+  FIRST_ENQUIRY_NOW = 0
   include PageObject
   page_url "#{FigNewton.base_url}/uk/london/wbsa"
 

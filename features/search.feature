@@ -29,3 +29,8 @@ Feature: Search Function
      |     keywords      |     expected_city     |     expected_university         |     expected_property           |
      |     liverpool     |     利物浦             |     University of Liverpool     |     Victoria Hall Liverpool     |
      |     利物浦         |     利物浦             |     University of Liverpool     |     null                        |
+
+
+  Scenario: Popular search
+    When I click popular text in the popular section
+    Then Corresponding popular text should be available in the SRP or PP

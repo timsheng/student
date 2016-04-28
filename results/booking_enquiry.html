@@ -27,8 +27,8 @@
             <td>duration:</td>
           </tr>
           <tr>
-            <td>Thursday April 21, 2016 at 20:09:24</td>
-            <td>1m43.372s</td>
+            <td>Wednesday April 27, 2016 at 14:31:57</td>
+            <td>0m37.747s</td>
           </tr>
         </table>  
           <pre class="description run_stats">Story<br/>
@@ -54,22 +54,22 @@ So I can live overseas around the school</pre>
         <tr class="summary_row_header">
           <td>Scenarios</td>
           <td>2</td>
+          <td>0 <span class="percentage">(0.0%)</span></td>
           <td>2 <span class="percentage">(100.0%)</span></td>
           <td>0 <span class="percentage">(0.0%)</span></td>
           <td>0 <span class="percentage">(0.0%)</span></td>
           <td>0 <span class="percentage">(0.0%)</span></td>
-          <td>0 <span class="percentage">(0.0%)</span></td>
-          <td>0m51.686s</td>
+          <td>0m18.873s</td>
         </tr>
         <tr class="summary_row_header">
           <td>Steps</td>
           <td>11</td>
-          <td>11 <span class="percentage">(100.0%)</span></td>
+          <td>4 <span class="percentage">(36.4%)</span></td>
+          <td>2 <span class="percentage">(18.2%)</span></td>
+          <td>5 <span class="percentage">(45.5%)</span></td>
           <td>0 <span class="percentage">(0.0%)</span></td>
           <td>0 <span class="percentage">(0.0%)</span></td>
-          <td>0 <span class="percentage">(0.0%)</span></td>
-          <td>0 <span class="percentage">(0.0%)</span></td>
-          <td>0m8.533s</td>
+          <td>0m2.311s</td>
         </tr>
 
 
@@ -85,7 +85,7 @@ So I can live overseas around the school</pre>
 	      <br />
 	      <table cellspacing="0" cellpadding="7" class="scenario" width="100%">
 	      <tr >
-		  <th colspan="2" class="passed">Booking Enquiry as A New User</th>
+		  <th colspan="2" class="failed">Booking Enquiry as A New User</th>
 		</tr>
 		  <tr class="borderSeparator">
 		  <td class="image_tag"> <img src="images/passed.png" alt="passed" title="passed"></td>
@@ -104,24 +104,48 @@ So I can live overseas around the school</pre>
 		  </td>
 		  </tr>
 		  <tr class="borderSeparator">
-		  <td class="image_tag"> <img src="images/passed.png" alt="passed" title="passed"></td>
+		  <td class="image_tag"> <img src="images/failed.png" alt="failed" title="failed"></td>
 		  <td class="">
    
 		  When  I fill in personal info
+	<table>
+		<tr class="error">
+			<td class="message">
+				<strong><pre>unable to locate element, using {:id=&gt;&quot;enquiry_firstName&quot;, :tag_name=&gt;&quot;input or textarea&quot;, :type=&gt;&quot;(any text type)&quot;} (Watir::Exception::UnknownObjectException)</pre></strong>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<pre class="ruby"><strong>./features/support/pages/storm/enquirysubmit_page.rb
+</strong><code><span class="linenum">10</span>
+<span class="linenum">11</span>  <span class="keyword">def </span><span class="method">fill_in_personal_info</span><span class="punct">(</span><span class="ident">data</span> <span class="punct">=</span> <span class="punct">{})</span>
+<span class="offending"><span class="linenum">12</span>    <span class="ident">populate_page_with</span> <span class="ident">data_for</span><span class="punct">(</span><span class="symbol">:personal_info</span><span class="punct">,</span> <span class="ident">data</span><span class="punct">)</span></span>
+<span class="linenum">13</span>  <span class="keyword">end</span></code></pre>
+			</td>
+		</tr>
+		<tr >
+			<td class="detail">
+					<pre>./features/support/pages/storm/enquirysubmit_page.rb:12:in `fill_in_personal_info&#39;
+./features/step_definitions/booking_enquiry_steps.rb:12:in `block (2 levels) in &lt;top (required)&gt;&#39;
+./features/step_definitions/booking_enquiry_steps.rb:11:in `/^I fill in personal info$/&#39;
+features/booking_enquiry.feature:10:in `And I fill in personal info&#39;</pre>
+			</td>
+		</tr>
+	</table>
 
 		  </td>
 		  </tr>
 		  <tr class="borderSeparator">
-		  <td class="image_tag"> <img src="images/passed.png" alt="passed" title="passed"></td>
-		  <td class="">
+		  <td class="image_tag"> <img src="images/skipped.png" alt="skipped" title="skipped"></td>
+		  <td class="skipped_step">
    
 		  When  I create password in the popup dialog
 
 		  </td>
 		  </tr>
 		  <tr class="borderSeparator">
-		  <td class="image_tag"> <img src="images/passed.png" alt="passed" title="passed"></td>
-		  <td class="">
+		  <td class="image_tag"> <img src="images/skipped.png" alt="skipped" title="skipped"></td>
+		  <td class="skipped_step">
    
 		  Then  I should find this user in the first enquiry result in the booking system
 
@@ -130,10 +154,12 @@ So I can live overseas around the school</pre>
 	      </table>
 	    
         <div class="img_container">
+              <a href='' onclick="img=document.getElementById('img_0'); img.style.display = (img.style.display == 'none' ? 'block' : 'none');return false">Screenshot</a><br />
+		          <img id='img_0' style='display: none' src='images/error-EnquirySubmitPage-2016-04-27_14-32-16.png'/>
 	        <br /><br />
 	      <table cellspacing="0" cellpadding="7" class="scenario" width="100%">
 	      <tr >
-		  <th colspan="2" class="passed">Booking Enquiry as A Existing User</th>
+		  <th colspan="2" class="failed">Booking Enquiry as A Existing User</th>
 		</tr>
 		  <tr class="borderSeparator">
 		  <td class="image_tag"> <img src="images/passed.png" alt="passed" title="passed"></td>
@@ -152,32 +178,56 @@ So I can live overseas around the school</pre>
 		  </td>
 		  </tr>
 		  <tr class="borderSeparator">
-		  <td class="image_tag"> <img src="images/passed.png" alt="passed" title="passed"></td>
+		  <td class="image_tag"> <img src="images/failed.png" alt="failed" title="failed"></td>
 		  <td class="">
    
 		  When  I fill in personal info with existing account
+	<table>
+		<tr class="error">
+			<td class="message">
+				<strong><pre>unable to locate element, using {:id=&gt;&quot;enquiry_firstName&quot;, :tag_name=&gt;&quot;input or textarea&quot;, :type=&gt;&quot;(any text type)&quot;} (Watir::Exception::UnknownObjectException)</pre></strong>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<pre class="ruby"><strong>./features/support/pages/storm/enquirysubmit_page.rb
+</strong><code><span class="linenum">10</span>
+<span class="linenum">11</span>  <span class="keyword">def </span><span class="method">fill_in_personal_info</span><span class="punct">(</span><span class="ident">data</span> <span class="punct">=</span> <span class="punct">{})</span>
+<span class="offending"><span class="linenum">12</span>    <span class="ident">populate_page_with</span> <span class="ident">data_for</span><span class="punct">(</span><span class="symbol">:personal_info</span><span class="punct">,</span> <span class="ident">data</span><span class="punct">)</span></span>
+<span class="linenum">13</span>  <span class="keyword">end</span></code></pre>
+			</td>
+		</tr>
+		<tr >
+			<td class="detail">
+					<pre>./features/support/pages/storm/enquirysubmit_page.rb:12:in `fill_in_personal_info&#39;
+./features/step_definitions/booking_enquiry_steps.rb:41:in `block (2 levels) in &lt;top (required)&gt;&#39;
+./features/step_definitions/booking_enquiry_steps.rb:40:in `/^I fill in personal info with existing account$/&#39;
+features/booking_enquiry.feature:19:in `And I fill in personal info with existing account&#39;</pre>
+			</td>
+		</tr>
+	</table>
 
 		  </td>
 		  </tr>
 		  <tr class="borderSeparator">
-		  <td class="image_tag"> <img src="images/passed.png" alt="passed" title="passed"></td>
-		  <td class="">
+		  <td class="image_tag"> <img src="images/skipped.png" alt="skipped" title="skipped"></td>
+		  <td class="skipped_step">
    
 		  When  I input password in the popup dialog
 
 		  </td>
 		  </tr>
 		  <tr class="borderSeparator">
-		  <td class="image_tag"> <img src="images/passed.png" alt="passed" title="passed"></td>
-		  <td class="">
+		  <td class="image_tag"> <img src="images/skipped.png" alt="skipped" title="skipped"></td>
+		  <td class="skipped_step">
    
 		  Then  I should find this user in the first enquiry result in the booking system
 
 		  </td>
 		  </tr>
 		  <tr class="borderSeparator">
-		  <td class="image_tag"> <img src="images/passed.png" alt="passed" title="passed"></td>
-		  <td class="">
+		  <td class="image_tag"> <img src="images/skipped.png" alt="skipped" title="skipped"></td>
+		  <td class="skipped_step">
    
 		  Then  I lost this enquiry by student name
 
@@ -186,6 +236,8 @@ So I can live overseas around the school</pre>
 	      </table>
 	    
         <div class="img_container">
+              <a href='' onclick="img=document.getElementById('img_1'); img.style.display = (img.style.display == 'none' ? 'block' : 'none');return false">Screenshot</a><br />
+		          <img id='img_1' style='display: none' src='images/error-EnquirySubmitPage-2016-04-27_14-32-31.png'/>
 	        <br /><br />
 	      </div>
       </div>

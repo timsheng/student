@@ -16,6 +16,8 @@ class HomePage
 
   unordered_list :search_result_for_property, :css => ".suggest-group.property"
 
+  elements :popular_search_text,:a, :css => "form#form-search>div.search-possibilities li>a"
+
   link :partner_portal_link, :href => "/p/new-student"
 
   def search_keywords_in_hero_banner keywords
@@ -24,5 +26,13 @@ class HomePage
 
   def search_keywords_in_navigation keywords
     self.search_navigation = keywords
+  end
+
+  def get_random_popular_element
+    texts = []
+    self.popular_search_text_elements.each do |element|
+    texts << element
+    end
+    texts.sample
   end
 end
