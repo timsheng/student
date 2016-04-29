@@ -1,6 +1,7 @@
 class InputPasswordDialog
   include PageObject
   include DataMagic
+
   text_field :password, :id => "password"
   button :login_btn, :id => "login"
 

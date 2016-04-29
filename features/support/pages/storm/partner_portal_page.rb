@@ -4,33 +4,19 @@ class PartnerPortalPage
   include DataMagic
 
   select_list :destination_city, :id => "partner_application_studentRequirements_cityOfStudy"
-
   select_list :destination_uni, :id => "partner_application_studentRequirements_studyDestinationUni"
-
   select_list :arrival_month, :id => "partner_application_studentRequirements_studyAbroadDate"
-
   select_list :length_of_study, :id => "partner_application_studentDetails_lengthOfStay"
-
   text_field :first_name, :id => "partner_application_userInfo_firstName"
-
   text_field :last_name, :id => "partner_application_userInfo_lastName"
-
   text_field :student_email, :id => "partner_application_studentEmail_first"
-
   text_field :confirm_student_email, :id => "partner_application_studentEmail_second"
-
   text_field :phone_number, :id => "partner_application_userInfo_phoneNumber"
-
   text_field :current_school, :id => "partner_application_studentDetails_studyCurrentUni"
-
   text_area :other_requirement, :id => "partner_application_studentRequirements_otherPreferences"
-
   radio_button :not_has_contact, :id => "not-has-contact"
-
   text_field :referrer_name, :id => "partner_application_studentDetails_referrerName"
-
   text_field :referrer_email, :id => "partner_application_referrerEmail"
-
   button :partner_application_submit, :id => "partner_application_submit"
 
   def select_random_city
