@@ -6,7 +6,6 @@ class ApplicationDetailsPage
 
   link :my_account_link, :class => "primary-link subnav-link my-account"
   link :logout_link, :href => "/my-account/logout"
-
   h1 :user_name, :class => "username"
   span :profile_percentage, :class => "completed-amount"
   text_field :first_name, :id => "application_details_firstName"
