@@ -51,7 +51,7 @@ When(/^I hit enter keyboard$/) do
   on(HomePage).search_keywords_in_hero_banner_via_enter_keyboard
 end
 
-Then(/^"(.*?)" should be included in SRP's url$/) do |expected_result|
+Then(/^"(.*?)" should be included in the url$/) do |expected_result|
   expect(@current_page.current_url).to include expected_result
 end
 

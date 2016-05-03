@@ -9,7 +9,6 @@ Feature: User Profile
     When The user update profile in application details page
     Then The username has been changed to new one.
 
-  @dev
   Scenario: New user create user profile
     Given The new user get into application deatils page
     When The user update profile in application details page

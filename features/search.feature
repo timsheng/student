@@ -35,14 +35,18 @@ Feature: Search Function
     When I click popular text in the popular section
     Then Corresponding popular text should be available in the SRP or PP
 
-  @todo
   Scenario: Search city via 'Enter' keyboard on hero banner
     When I input "london" in the hero banner searchbox
     And I hit enter keyboard
-    Then "london" should be included in SRP's url
+    Then "london" should be included in the url
 
-  @todo
   Scenario: Search university via clicking search button on hero banner
     When I input "University of Liverpool" in the hero banner searchbox
     And I click search button
-    Then "university-of-liverpool" should be included in SRP's url
+    Then "university-of-liverpool" should be included in the url
+
+  @dev
+  Scenario: Non Matched Search
+    When I input "londonlondon" in the hero banner searchbox
+    And I click search button
+    Then "browse" should be included in the url
