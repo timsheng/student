@@ -38,7 +38,7 @@ end
 
 When(/^I fill in personal info with existing account$/) do
   on(EnquirySubmitPage) do |page|
-    page.fill_in_personal_info('firstname'=>'tim','lastname'=>'auto+2','email'=>'tim.auto+2@student.com')
+    page.fill_in_personal_info('first_name'=>'tim','last_name'=>'auto+2','email'=>'tim.auto+2@student.com')
     @student_name = page.get_full_name
     page.submit_enquiry
   end
