@@ -1,4 +1,5 @@
 Feature: Submit Enquiry on Partner Portal
+
   As a partner
   I want to use partner portal to submit enquiry
   So student needn't to submit enquiry

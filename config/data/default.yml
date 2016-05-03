@@ -1,12 +1,12 @@
 personal_info:
-  firstname: ~first_name
-  lastname: ~last_name
+  first_name: ~first_name
+  last_name: ~last_name
   email: ~email_address
   mobile: ~phone_number
 
 existing_user_info:
-  firstname: tim
-  lastname: auto+2
+  first_name: tim
+  last_name: auto+2
   email: tim.auto+2@student.com
   mobile: 18616177661
 
@@ -17,8 +17,8 @@ existing_user_popup:
   password: abc20052614
 
 signup:
-  firstname: ~first_name
-  lastname: ~last_name
+  first_name: ~first_name
+  last_name: ~last_name
   email: ~email_address
   mobile: ~phone_number
   password: abc20052614
@@ -30,3 +30,28 @@ partner:
   phone_number: ~phone_number
   current_school: testschool
   other_requirement: testinfo
+
+user_profile:
+  first_name: ~first_name
+  last_name: ~last_name
+  student_mobile: ~phone_number
+  date_of_birth: 05/05/1977
+  current_school: FuDan
+  abroad_date: 01/01/2018
+  major: Maths
+  first_address: ~street_address
+  second_address: ~secondary_address
+  city: ~city
+  state: ~state
+  zip_code: ~zip_code
+  guarantor_first_name: ~first_name
+  guarantor_last_name: ~last_name
+  guarantor_date_of_birth: 05/05/1965
+  guarantor_email: ~email_address
+  guarantor_mobile: ~phone_number
+  guarantor_first_address: ~street_address
+  guarantor_second_address: ~secondary_address
+  guarantor_city: ~city
+  guarantor_state: ~state
+  guarantor_zip_code: ~zip_code
+  other_requirement: test_requirement

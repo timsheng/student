@@ -2,8 +2,8 @@ class SignUpPage
   include PageObject
   include DataMagic
 
-  text_field :firstname, :id => "registration_user_firstName"
-  text_field :lastname, :id => "registration_user_lastName"
+  text_field :first_name, :id => "registration_user_firstName"
+  text_field :last_name, :id => "registration_user_lastName"
   text_field :email, :id => "registration_user_email"
   text_field :mobile, :id => "registration_user_phoneNumber"
   text_field :password, :id => "registration_user_password"
