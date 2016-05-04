@@ -4,4 +4,9 @@ module Helper
     arr.sample
   end
 
+  def generate_base_url locale
+    "#{FigNewton.storm.row_base_url}" + "/" + locale
+  end
+
+
 end

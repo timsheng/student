@@ -2,7 +2,7 @@ class ApplicationDetailsPage
   include PageObject
   include DataMagic
   include Helper
-  page_url "#{FigNewton.base_url}/my-account/application-details"
+  page_url "#{FigNewton.storm.base_url}/my-account/application-details"
 
   link :my_account_link, :class => "primary-link subnav-link my-account"
   link :logout_link, :href => "/my-account/logout"

@@ -11,7 +11,7 @@ class SignUpPage
   button :register, :id => "registration_register"
 
   def signup(data = {})
-    populate_page_with data_for(:signup,data)
+    populate_page_with data_for(:signup, data)
     check_accept_terms
     register
   end
