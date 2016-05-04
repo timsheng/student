@@ -5,7 +5,7 @@ module Helper
   end
 
   def generate_base_url locale
-    "#{FigNewton.row_base_url}" + "/" + locale
+    "#{FigNewton.storm.row_base_url}" + "/" + locale
   end
 
 
