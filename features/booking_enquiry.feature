@@ -19,3 +19,11 @@ Feature: Booking Enquiry
     And I input password in the popup dialog
     Then I should find this user in the first enquiry result in the booking system
     And I lost this enquiry by student name
+
+  @dev
+  Scenario: Contact an expert for academic year
+    When I go to a property page for "en-gb"
+    And I click the contact an expert button
+    And I fill in personal info
+    And I create password in the popup dialog
+    Then I should find this user in the first enquiry result in the booking system
