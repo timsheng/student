@@ -1,9 +1,11 @@
 class PropertyPage
   include PageObject
   include Helper
-  page_url "#{FigNewton.base_url}/uk/london/wbsa"
+  attr_reader :property_path
+  page_url "#{FigNewton.storm.base_url}#{FigNewton.storm.property_path}"
 
   FIRST_ENQUIRY_NOW = 0
+
   link :contact_an_expert, :class => "btn btn-link btn-secondary"
   elements :enquiry_now, :a, :css => ".btn.btn-primary-thin"
 
@@ -13,7 +15,11 @@ class PropertyPage
 
   def generate_page_url locale
     base_url = generate_base_url locale
-    url = base_url+"/uk/london/wbsa"
+    url = base_url + property_path
+  end
+
+  def property_path
+    return "#{FigNewton.storm.property_path}"
   end
 
   def visit_specify_locale_property_page locale

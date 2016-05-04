@@ -1,7 +1,7 @@
 class HomePage
   include PageObject
 
-  page_url "#{FigNewton.base_url}"
+  page_url "#{FigNewton.storm.base_url}"
 
   link :login_link , :href => "/my-account/login"
   text_field :search_icon, :class => "search header-search"

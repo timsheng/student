@@ -14,7 +14,7 @@ class PartnerPortalDialog
   end
 
   def generate_partner_code
-    return generate_code(3)+(rand 100..999).to_s
+    return generate_code(3) + (rand 100..999).to_s
   end
 
   def generate_code(number)
