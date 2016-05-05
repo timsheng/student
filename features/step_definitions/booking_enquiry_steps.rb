@@ -66,6 +66,9 @@ end
 When(/^I submit enquiry less than six months as a new user$/) do
   on(EnquirySubmitPage) do |page|
     page.fill_in_personal_info
+
+    # @student_name, @student_first_name, @student_last_name are instance variables,
+    # can be called cross scenario
     @student_name = page.get_full_name
     @student_first_name = page.first_name
     @student_last_name = page.last_name
