@@ -2,14 +2,32 @@ class EnquirySubmitPage
   include PageObject
   include DataMagic
 
+  LENGTH_OF_STAY_IS_OTHER = 2
+
   text_field :first_name, :id => "enquiry_firstName"
   text_field :last_name, :id => "enquiry_lastName"
   text_field :email, :id => "enquiry_email"
   text_field :mobile, :id => "enquiry_phoneNumber"
+  elements :length_of_stay, :label, :class => "radio-label"
+  select_list :tenancy_months, :id => "enquiry_tenancyMonths"
   button :enquiry_now_btn, :id => "enquiry_submit"
 
   def fill_in_personal_info(data = {})
     populate_page_with data_for(:personal_info, data)
+  end
+
+  def select_tenancy_months_less_than_six
+    select_other_length_of_stay
+    tenancy_months = self.get_tenancy_months
+  end
+
+  def select_other_length_of_stay
+    length_of_stay_elements[LENGTH_OF_STAY_IS_OTHER].click
+  end
+
+  def get_tenancy_months
+    months = self.tenancy_months_options
+    return months[0...6].sample
   end
 
   def submit_enquiry

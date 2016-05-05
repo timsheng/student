@@ -62,3 +62,29 @@ end
 When(/^I click the contact an expert button$/) do
   on(PropertyPage).contact_an_expert
 end
+
+When(/^I submit enquiry less than six months as a new user$/) do
+  on(EnquirySubmitPage) do |page|
+    page.fill_in_personal_info
+
+    # @student_name, @student_first_name, @student_last_name are instance variables,
+    # can be called cross scenario
+    @student_name = page.get_full_name
+    @student_first_name = page.first_name
+    @student_last_name = page.last_name
+    page.select_tenancy_months_less_than_six
+    page.submit_enquiry
+  end
+  on(CreatePasswordDialog).create_password_in_dialog
+end
+
+Then(/^I should not find this user in the first enquiry result in the booking system$/) do
+  visit(Booking::LoginPage).login
+  visit(EnquiryListPage) do |page|
+    expect(page.text).not_to include @student_name
+  end
+end
+
+Then(/^I should find this user in the first student result in the booking system$/) do
+  expect(visit(StudentListPage).text).to include @student_first_name, @student_last_name
+end
