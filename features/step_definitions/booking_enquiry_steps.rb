@@ -92,7 +92,6 @@ end
 When(/^I click submit button on the enquiry submit page$/) do
   on(EnquirySubmitPage) do |page|
     @student_name = page.get_full_name_filled
-    puts @student_name
     page.enquiry_now_btn
   end
 end
