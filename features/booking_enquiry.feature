@@ -27,10 +27,18 @@ Feature: Booking Enquiry
     And I create password in the popup dialog
     Then I should find this user in the first enquiry result in the booking system
 
-  @dev
   Scenario: Contact an expert less than 6 months
     When I go to a property page for "en-gb"
     And I click the contact an expert button
     And I submit enquiry less than six months as a new user
     Then I should not find this user in the first enquiry result in the booking system
     And I should find this user in the first student result in the booking system
+
+  @dev
+  Scenario: Booking Enquiry as A logined User
+    Given The existing user logged in
+    When I go to a property page
+    And I click on the first enquiry now button
+    And I click submit button on the enquiry submit page
+    Then I should find this user in the first enquiry result in the booking system
+    And I lost this enquiry by student name
