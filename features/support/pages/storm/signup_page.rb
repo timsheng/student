@@ -12,7 +12,7 @@ class SignUpPage
 
   def signup(data = {})
     populate_page_with data_for(:signup, data)
-    check_accept_terms
+    accept_terms_element.fire_event :click
     register
   end
 
