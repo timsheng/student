@@ -6,7 +6,7 @@ class PropertyPage
 
   FIRST_ENQUIRY_NOW = 0
 
-  link :contact_an_expert, :class => "btn btn-link btn-secondary"
+  link :contact_an_expert, :class => "contact-an-expert-cta__button btn btn-link btn-secondary"
   elements :enquiry_now, :a, :css => ".btn.btn-primary-thin"
 
   def click_first_enquiry_now
