@@ -15,6 +15,11 @@ class PartnerPortalPage
   text_field :current_school, :id => "partner_application_studentDetails_studyCurrentUni"
   text_area :other_requirement, :id => "partner_application_studentRequirements_otherPreferences"
   radio_button :not_has_contact, :id => "not-has-contact"
+  radio_button :has_contact, :id => "has-contact"
+  text_field :contact_first_name, :id => "partner_application_studentDetails_contactPersonFirstName"
+  text_field :contact_last_name, :id => "partner_application_studentDetails_contactPersonLastName"
+  text_field :contact_email, :id => "partner_application_contactPersonEmail"
+  text_field :contact_phone, :id => "partner_application_studentDetails_contactPersonPhone"
   text_field :referrer_name, :id => "partner_application_studentDetails_referrerName"
   text_field :referrer_email, :id => "partner_application_referrerEmail"
   button :partner_application_submit, :id => "partner_application_submit"
@@ -60,8 +65,20 @@ class PartnerPortalPage
     input_confirm_email
   end
 
+  def fill_in_contact_person_details(data = {})
+    populate_page_with data_for(:contact_info, data)
+  end
+
+  def fill_in_referrer_details(data = {})
+    populate_page_with data_for(:referrer_info, data)
+  end
+
   def choose_contact_person
     select_not_has_contact
+  end
+
+  def choose_contact_person_yes
+    has_contact_element.fire_event :click
   end
 
 end
