@@ -14,6 +14,16 @@ When(/^I submit enquiry for new student on partner portal$/) do
   end
 end
 
+When(/^I submit enquiry for new student on partner portal with overall info$/) do
+  on(PartnerPortalPage) do |page|
+    page.fill_in_student_details
+    page.choose_contact_person_yes
+    page.fill_in_contact_person_details
+    page.fill_in_referrer_details
+    page.partner_application_submit
+  end
+end
+
 Then(/^I can see success included in url$/) do
   expect(@current_page.current_url).to include 'success'
 end

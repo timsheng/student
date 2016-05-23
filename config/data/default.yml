@@ -25,6 +25,16 @@ partner:
   current_school: testschool
   other_requirement: testinfo
 
+contact_info:
+  contact_first_name: ~first_name
+  contact_last_name: ~last_name
+  contact_email: ~email_address
+  contact_phone: ~phone_number
+
+referrer_info:
+  referrer_name: ~first_name
+  referrer_email: ~email_address
+
 user_profile:
   first_name: ~first_name
   last_name: ~last_name
