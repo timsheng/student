@@ -3,7 +3,7 @@ storm:
   password: abc20052614
   base_url: https://oslqa:m2WackNUHbAqHz51@storm-frontend-cn-draft.dandythrust.com
   row_base_url: https://oslqa:m2WackNUHbAqHz51@storm-frontend-draft.dandythrust.com
-  property_path: /uk/london/wbsa
+  property_path: /uk/london/tufnell-house
 booking:
   base_url: https://oslqa:m2WackNUHbAqHz51@bookings.stage.overseasstudentliving.com
   username: tim.sheng
