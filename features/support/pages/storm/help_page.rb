@@ -4,6 +4,10 @@ class HelpPage
   
   page_url "#{FigNewton.storm.base_url}/help"
 
-  button :wechat_long_banner, :xpath =>"//div[@class='faq-content']//nav/div[2]/div[2]/button"
+  button :wechat_long_banner, :css =>"div.faq-content div:nth-child(2)>button"
+
+  def click_wechat_long_banner
+    self.wechat_long_banner
+  end
 
 end

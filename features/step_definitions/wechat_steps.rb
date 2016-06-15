@@ -3,7 +3,6 @@ When(/^I click left floating widget$/) do
 end
 
 Then(/^I should see "(.*?)" on the popup window$/) do |qr_hint|
-  #expect(on(HomePage).popup_QRcode?).to be true
   expect(@current_page.text).to include qr_hint
 end
 
@@ -14,7 +13,7 @@ end
 When(/^I click wechat on social widget$/) do
   on(HomePage) do |page|
     page.click_wechat_sidebar_icon
-    page.wechat_social_widget
+    page.click_wechat_social_widget
   end
 end
 
@@ -23,7 +22,7 @@ Given(/^I'm on help page$/) do
 end
 
 When(/^I click wechat long banner$/) do
-  on(HelpPage).wechat_long_banner
+  on(HelpPage).click_wechat_long_banner
 end
 
 Given(/^I'm on SRP page$/) do
@@ -35,5 +34,5 @@ Given(/^I'm on SRP page$/) do
 end
 
 When(/^I click wechat short banner$/) do
-  on(SrpPage).click_wechat_short_banner
+  on(SearchResultPage).click_wechat_short_banner
 end

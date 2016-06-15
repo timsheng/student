@@ -8,5 +8,9 @@ module SocialWidget
   def click_wechat_sidebar_icon
     self.social_widget_element[WECHAT_SIDEBAR_ICON].click
   end
+
+  def click_wechat_social_widget
+    self.wechat_social_widget
+  end
   
 end

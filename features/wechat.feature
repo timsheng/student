@@ -9,7 +9,7 @@ Feature:Wechat widget
     When I click left floating widget 
     Then I should see "扫二维码立即开始啰！" on the popup window
     Then I can close the popup window
-
+  
   Scenario: Open wechat social widget on home page 
     Given I'm on CN homepage 
     When I click wechat on social widget 
