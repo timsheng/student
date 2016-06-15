@@ -1,9 +1,10 @@
 storm:
   username: tim.sheng@student.com
   password: abc20052614
-  base_url: https://oslqa:m2WackNUHbAqHz51@storm-frontend-cn-draft.dandythrust.com
+  base_url: https://oslqa:m2WackNUHbAqHz51@storm-frontend-room-matrix-reloaded-uat.dandythrust.com
   row_base_url: https://oslqa:m2WackNUHbAqHz51@storm-frontend-draft.dandythrust.com
   property_path: /uk/london/tufnell-house
+  # property_path: /au/sydney/uws-village-hawkesbury-campus
 booking:
   base_url: https://oslqa:m2WackNUHbAqHz51@bookings.stage.overseasstudentliving.com
   username: tim.sheng

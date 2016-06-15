@@ -42,3 +42,10 @@ Feature: Booking Enquiry
     And I click submit button on the enquiry submit page
     Then I should find this user in the first enquiry result in the booking system
     And I lost this enquiry by student name
+
+  @room_matrix
+  Scenario: Booking Enquiry as A Existing User
+    When I go to a property page
+    And I choose available room category
+    #And I choose available listing
+    #And I click enquiry now button
