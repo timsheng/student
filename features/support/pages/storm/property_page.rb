@@ -10,9 +10,8 @@ class PropertyPage
   button :enquiry_now, :css => "form#room-preferences button"
   spans :room_card, :class => "room-category"
   span :choose_tenancy, :css => "div#picker label>span"
-  labels :move_in_month, :css => "div#move-in-option-pills label"
-  labels :move_out_month, :css => "div#move-out-option-pills label"
-
+  labels :move_in_month, :css => "#move-in-option-pills>div>input[type='radio']:not(:disabled)+label"
+  labels :move_out_month, :css => "#move-out-option-pills>div>input[type='radio']:not(:disabled)+label"
 
   def click_first_enquiry_now
     enquiry_now_elements[FIRST_ENQUIRY_NOW].click
@@ -44,7 +43,6 @@ class PropertyPage
     end
   end
 
-
   def choose_corresponding_listing room_category
     parent_div = room_category.parent.parent
     sibling_ul = parent_div.ul(:xpath, "./following-sibling::ul")
@@ -52,36 +50,30 @@ class PropertyPage
     new_listings = all_listings[0...all_listings.size-1]
     available_listings = new_listings.select do |nl|
        listing = nl.div(:class, "property-rooms-unit-content__information")
-       listing unless listing.style('color') == 'rgba(158, 158, 158, 1)'
+       listing if (listing.style('color') != 'rgba(158, 158, 158, 1)' && listing.visible?)
     end
     final_listing = available_listings.sample
     if final_listing.nil?
       puts "no available listing"
     else
-      final_listing.click
+      final_listing.when_present.click
     end
   end
 
   def choose_required_tenancy
     self.choose_tenancy_element.click
-    available_move_in_month = self.move_in_month_elements.select do |month|
-      month unless month.style('background-color') != 'transparent'
-    end
-    final_move_in_month = available_move_in_month.sample
-    if final_move_in_month.nil?
-      puts "no available move in month"
-    else
-      final_move_in_month.click
-    end
-    available_move_out_month = self.move_out_month_elements.select do |month|
-      month unless month.style('background-color') != 'transparent'
-    end
-    final_move_out_month = available_move_out_month.sample
-    if final_move_out_month.nil?
-      puts "no available move out month"
-    else
-      final_move_out_month.click
-    end
+    choose_available_move_in_month
+    choose_available_move_out_month
+  end
+
+  def choose_available_move_in_month
+    available_move_in_month = self.move_in_month_elements.sample
+    available_move_in_month.when_present.click
+  end
+
+  def choose_available_move_out_month
+    available_move_out_month = self.move_out_month_elements.sample
+    available_move_out_month.when_present.click
   end
 
   def click_enquiry_now

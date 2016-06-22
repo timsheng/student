@@ -99,6 +99,7 @@ end
 When(/^I choose available room category$/) do
   @room_category = on(PropertyPage).choose_available_room_category
   @room_category.click
+  sleep 1
 end
 
 When(/^I choose available listing$/) do
