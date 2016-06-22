@@ -99,17 +99,14 @@ end
 When(/^I choose available room category$/) do
   @room_category = on(PropertyPage).choose_available_room_category
   @room_category.click
-  sleep 5
 end
 
 When(/^I choose available listing$/) do
   on(PropertyPage).choose_corresponding_listing @room_category
-  sleep 5
 end
 
 When(/^I select required tenancy$/) do
   on(PropertyPage).choose_required_tenancy
-  sleep 5
 end
 
 When(/^I click enquiry now button$/) do
