@@ -7,8 +7,9 @@ Feature: Booking Enquiry
   Scenario: Booking Enquiry as A New User
     When I go to a property page
     And I choose available room category
+    And I select required tenancy
     And I choose available listing
-    And I choose tenancy and click enquiry now button
+    And I click enquiry now button
     And I fill in personal info
     And I create password in the popup dialog
 #    And I complete the making of an enquiry
@@ -33,8 +34,9 @@ Feature: Booking Enquiry
     Given The existing user logged in
     When I go to a property page
     And I choose available room category
+    And I select required tenancy
     And I choose available listing
-    And I choose tenancy and click enquiry now button
+    And I click enquiry now button
     And I click submit button on the enquiry submit page
     Then I should find this user in the first enquiry result in the booking system
     And I lost this enquiry by student name
@@ -46,7 +48,7 @@ Feature: Booking Enquiry
     And I select required tenancy
     And I choose available listing
     And I click enquiry now button
-    #And I fill in personal info with existing account
-    #And I input password in the popup dialog
-    #Then I should find this user in the first enquiry result in the booking system
-    #And I lost this enquiry by student name
+    And I fill in personal info with existing account
+    And I input password in the popup dialog
+    Then I should find this user in the first enquiry result in the booking system
+    And I lost this enquiry by student name
