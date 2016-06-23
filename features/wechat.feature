@@ -22,7 +22,6 @@ Feature:Wechat widget
     Then I should see "扫二维码立即开始啰！" on the popup window
     Then I can close the popup window
   
-  @dev
   Scenario: Open wechat short banner on SRP page
     Given I'm on SRP page 
     When I click wechat short banner 
@@ -32,8 +31,8 @@ Feature:Wechat widget
   Scenario: Open left floating widget on property page
     When I go to a property page
     When I scroll down and click left floating widget 
-    #Then I should see "扫二维码立即开始啰！" on the popup window
-    #Then I can close the popup window
+    Then I should see "扫二维码立即开始啰！" on the popup window
+    Then I can close the popup window
   
   Scenario: Open wechat short banner on property page
     When I go to a property page
