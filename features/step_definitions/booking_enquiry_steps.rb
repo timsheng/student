@@ -95,3 +95,21 @@ When(/^I click submit button on the enquiry submit page$/) do
     page.enquiry_now_btn
   end
 end
+
+When(/^I choose available room category$/) do
+  @room_category = on(PropertyPage).choose_available_room_category
+  @room_category.click
+  sleep 1
+end
+
+When(/^I choose available listing$/) do
+  on(PropertyPage).choose_corresponding_listing @room_category
+end
+
+When(/^I select required tenancy$/) do
+  on(PropertyPage).choose_required_tenancy
+end
+
+When(/^I click enquiry now button$/) do
+  on(PropertyPage).click_enquiry_now
+end
