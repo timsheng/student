@@ -12,18 +12,13 @@ class PropertyPage
   FIRST_ENQUIRY_NOW = 0
 
   link :contact_an_expert, :class => "contact-an-expert-cta__button btn btn-link btn-secondary"
-<<<<<<< HEAD
-  elements :enquiry_now, :a, :css => ".btn.btn-primary-thin"
   button :wechat_short_banner, :css =>"div.wechat-conversation-banner--pp div:nth-child(2)>button"
   div :left_floating_widget, :id => "wechat-widget"
-
-=======
   button :enquiry_now, :css => "form#room-preferences button"
   spans :room_card, :class => "room-category"
   span :choose_tenancy, :css => "div#picker label>span"
   labels :move_in_month, :css => "#move-in-option-pills>div>input[type='radio']:not(:disabled)+label"
   labels :move_out_month, :css => "#move-out-option-pills>div>input[type='radio']:not(:disabled)+label"
->>>>>>> master
 
   def click_first_enquiry_now
     enquiry_now_elements[FIRST_ENQUIRY_NOW].click
@@ -43,12 +38,10 @@ class PropertyPage
     navigate_to url
   end
 
-<<<<<<< HEAD
   def click_wechat_short_banner_right
     wechat_short_banner_element.fire_event :click
   end
 
-=======
   def choose_available_room_category
     available_room_cards = room_card_elements.select do |room_card|
       room_card unless room_card.style('cursor') == 'default'
@@ -97,5 +90,5 @@ class PropertyPage
   def click_enquiry_now
     self.enquiry_now
   end
->>>>>>> master
+
 end
