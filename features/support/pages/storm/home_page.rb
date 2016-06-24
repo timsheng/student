@@ -1,8 +1,11 @@
 $:.unshift File.expand_path('..',__FILE__)
 require 'social_widget_module'
+require 'floating_widget_module'
+
 class HomePage
   include PageObject
   include SocialWidget
+  include FloatingWidget
 
   page_url "#{FigNewton.storm.base_url}"
 
@@ -37,10 +40,6 @@ class HomePage
     texts << element
     end
     texts.sample
-  end
-
-  def click_left_floating_widget
-    self.left_floating_widget_element.click
   end
 
 end

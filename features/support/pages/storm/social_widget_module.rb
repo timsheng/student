@@ -1,7 +1,7 @@
 module SocialWidget
   include PageObject
 
-  WECHAT_SIDEBAR_ICON = 4 unless const_defined?(:WECHAT_SIDEBAR_ICON)
+  WECHAT_SIDEBAR_ICON = 3 unless const_defined?(:WECHAT_SIDEBAR_ICON)
   unordered_list :social_widget, :id=>"contact-sidebar-list"
   button :wechat_social_widget, :class =>"wechat-conversation-banner__button-start-conversation"
 

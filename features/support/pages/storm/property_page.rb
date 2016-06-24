@@ -1,12 +1,19 @@
+$:.unshift File.expand_path('..',__FILE__)
+require 'floating_widget_module'
+
 class PropertyPage
   include PageObject
   include Helper
+  include FloatingWidget
   attr_reader :property_path
+
   page_url "#{FigNewton.storm.base_url}#{FigNewton.storm.property_path}"
 
   FIRST_ENQUIRY_NOW = 0
 
   link :contact_an_expert, :class => "contact-an-expert-cta__button btn btn-link btn-secondary"
+  button :wechat_short_banner, :css =>"div.wechat-conversation-banner--pp div:nth-child(2)>button"
+  div :left_floating_widget, :id => "wechat-widget"
   button :enquiry_now, :css => "form#room-preferences button"
   spans :room_card, :class => "room-category"
   span :choose_tenancy, :css => "div#picker label>span"
@@ -29,6 +36,10 @@ class PropertyPage
   def visit_specify_locale_property_page locale
     url = generate_page_url locale
     navigate_to url
+  end
+
+  def click_wechat_short_banner_right
+    wechat_short_banner_element.fire_event :click
   end
 
   def choose_available_room_category
@@ -79,4 +90,5 @@ class PropertyPage
   def click_enquiry_now
     self.enquiry_now
   end
+
 end
