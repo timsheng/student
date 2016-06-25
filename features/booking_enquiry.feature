@@ -15,10 +15,11 @@ Feature: Booking Enquiry
 #    And I complete the making of an enquiry
     Then I should find this user in the first enquiry result in the booking system
 
-  Scenario: Contact an expert for academic year
-    When I go to a property page for "en-gb"
+  @cae
+  Scenario: Contact an expert from property page
+    When I go to a property page for "en-us"
     And I click the contact an expert button
-    And I fill in personal info
+    And I fill in cae specific required info
     And I create password in the popup dialog
     Then I should find this user in the first enquiry result in the booking system
 

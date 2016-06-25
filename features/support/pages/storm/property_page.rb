@@ -6,7 +6,7 @@ class PropertyPage
 
   FIRST_ENQUIRY_NOW = 0
 
-  link :contact_an_expert, :class => "contact-an-expert-cta__button btn btn-link btn-secondary"
+  button :contact_an_expert, :class => "contact-an-expert-cta__button btn btn-link btn-secondary"
   button :enquiry_now, :css => "form#room-preferences button"
   spans :room_card, :class => "room-category"
   span :choose_tenancy, :css => "div#picker label>span"
