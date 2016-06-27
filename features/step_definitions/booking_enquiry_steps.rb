@@ -92,7 +92,7 @@ When(/^I click enquiry now button$/) do
   on(PropertyPage).click_enquiry_now
 end
 
-When(/^I fill in cae specific required info$/) do
+When(/^I fill in contact an expert specific required info$/) do
   on(EnquirySubmitPage) do |page|
     page.fill_in_cae_required_info
     @student_name = page.get_full_name
