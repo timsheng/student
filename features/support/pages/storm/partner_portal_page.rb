@@ -4,7 +4,7 @@ class PartnerPortalPage
   include DataMagic
 
   text_field :destination_uni, :id => "partner_application_studentRequirements_studyDestinationUni"
-  unordered_list :autosuggest_uni, :class =>"suggest-group"
+  unordered_list :autosuggest_uni, :class => "suggest-group"
   select_list :arrival_month, :id => "partner_application_studentRequirements_studyAbroadDate"
   select_list :length_of_study, :id => "partner_application_studentDetails_lengthOfStay"
   text_field :first_name, :id => "partner_application_userInfo_firstName"
