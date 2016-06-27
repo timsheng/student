@@ -12,5 +12,4 @@ module FloatingWidget
   	self.room_matrix_container_element.scroll_into_view
     self.left_floating_widget_element.when_present.click
   end
-
 end

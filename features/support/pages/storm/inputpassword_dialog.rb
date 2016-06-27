@@ -9,5 +9,4 @@ class InputPasswordDialog
     populate_page_with data_for(:existing_user_popup, data)
     login_btn
   end
-
 end

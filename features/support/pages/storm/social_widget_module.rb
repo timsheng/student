@@ -12,5 +12,4 @@ module SocialWidget
   def click_wechat_social_widget
     self.wechat_social_widget
   end
-  
 end

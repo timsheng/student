@@ -11,7 +11,7 @@ class PropertyPage
 
   FIRST_ENQUIRY_NOW = 0
 
-  link :contact_an_expert, :class => "contact-an-expert-cta__button btn btn-link btn-secondary"
+  button :contact_an_expert, :class => "contact-an-expert-cta__button btn btn-link btn-secondary"
   button :wechat_short_banner, :css =>"div.wechat-conversation-banner--pp div:nth-child(2)>button"
   div :left_floating_widget, :id => "wechat-widget"
   button :enquiry_now, :css => "form#room-preferences button"
@@ -90,5 +90,4 @@ class PropertyPage
   def click_enquiry_now
     self.enquiry_now
   end
-
 end

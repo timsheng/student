@@ -7,5 +7,4 @@ class SearchResultPage
   def click_wechat_short_banner
     wechat_short_banner_element.fire_event :click
   end
-
 end
