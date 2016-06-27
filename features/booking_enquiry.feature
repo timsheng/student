@@ -18,11 +18,11 @@ Feature: Booking Enquiry
   @cae
   Scenario Outline: Contact an expert from property page
     When I go to a property page for "<locale>"
-    #When I go to a property page for "en-us"
     And I click the contact an expert button
     And I fill in cae specific required info
     And I create password in the popup dialog
     Then I should find this user in the first enquiry result in the booking system
+    And I lost this enquiry by student name
 
     Examples:
     | locale  |
