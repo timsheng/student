@@ -27,3 +27,16 @@ Feature:Wechat widget
     When I click wechat short banner 
     Then I should see "扫二维码立即开始啰！" on the popup window
     Then I can close the popup window
+
+  Scenario: Open left floating widget on property page
+    When I go to a property page
+    When I scroll down and click left floating widget 
+    Then I should see "扫二维码立即开始啰！" on the popup window
+    Then I can close the popup window
+  
+  Scenario: Open wechat short banner on property page
+    When I go to a property page
+    When I click the right wechat short banner
+    Then I should see "扫二维码立即开始啰！" on the popup window
+    Then I can close the popup window
+

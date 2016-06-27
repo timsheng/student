@@ -1,8 +1,11 @@
 $:.unshift File.expand_path('..',__FILE__)
 require 'social_widget_module'
+require 'floating_widget_module'
+
 class HomePage
   include PageObject
   include SocialWidget
+  include FloatingWidget
 
   page_url "#{FigNewton.storm.base_url}"
 
