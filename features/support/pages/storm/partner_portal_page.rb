@@ -24,8 +24,8 @@ class PartnerPortalPage
   text_field :referrer_email, :id => "partner_application_referrerEmail"
   button :partner_application_submit, :id => "partner_application_submit"
 
-  def select_random_uni expected_university
-    self.destination_uni = expected_university
+  def select_random_uni university
+    self.destination_uni = university
     autosuggest_uni_element.when_present(3)
     autosuggest_uni_element.list_items.sample.when_present.click
   end
@@ -63,7 +63,16 @@ class PartnerPortalPage
     populate_page_with data_for(:referrer_info, data)
   end
 
-  def choose_contact_person
+  def fill_in_contact_person_details yes_or_no
+    if yes_or_no == "yes"
+      choose_contact_person_yes
+      fill_in_contact_person_details(data = {})
+    else
+      choose_contact_person_no
+    end
+  end
+
+  def choose_contact_person_no
     not_has_contact_element.fire_event :click
   end
 

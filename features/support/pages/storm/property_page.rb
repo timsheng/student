@@ -90,5 +90,4 @@ class PropertyPage
   def click_enquiry_now
     self.enquiry_now
   end
-
 end
