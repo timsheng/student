@@ -11,7 +11,7 @@ class EnquirySubmitPage
   text_field :last_name, :id => "enquiry_lastName"
   text_field :email, :id => "enquiry_email"
   text_field :mobile, :id => "enquiry_phoneNumber"
-  span :tenancy_picker, :id => "picker-button"
+  label :tenancy_picker, :id => "picker-button"
   labels :move_in_month, :css => "#move-in-option-pills>div>input[type='radio']:not(:disabled)+label"
   labels :move_out_month, :css => "#move-out-option-pills>div>input[type='radio']:not(:disabled)+label"
   button :enquiry_now_btn, :id => "enquiry_submit"
@@ -41,18 +41,18 @@ class EnquirySubmitPage
   end
 
   def select_destination_uni
-    uni = get_random_select_value_without_default self.destination_uni_options
-    if uni == 'Other'
-      self.other_uni = 'test uni'
-    else
-      self.destination_uni = uni
+    destination_uni_values = destination_uni_element.options.collect {|option| option.value }
+    destination_uni_value = destination_uni_values.sample
+    destination_uni_element.select_value(destination_uni_value)
+    if destination_uni_value == 'choice_not_listed'
+      self.other_uni = "Auto_Test_Uni"
     end
   end
 
   def fill_in_cae_required_info(data = {})
     fill_in_personal_info(data = {})
     select_move_in_and_move_out_month
-    self.budget_amount = '1000'
+    self.budget_amount = rand(10000000)
     select_destination_uni
   end
 
@@ -69,5 +69,4 @@ class EnquirySubmitPage
     last_name_filled = self.student_info_filled_elements[LAST_NAME].text
     return first_name_filled + ' ' + last_name_filled
   end
-
 end

@@ -21,6 +21,4 @@ class PartnerPortalDialog
     charset = Array('A'..'Z') + Array('a'..'z')
     Array.new(number) { charset.sample }.join
   end
-
-
 end

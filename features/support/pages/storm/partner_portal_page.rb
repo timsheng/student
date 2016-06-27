@@ -80,5 +80,4 @@ class PartnerPortalPage
   def choose_contact_person_yes
     has_contact_element.fire_event :click
   end
-
 end

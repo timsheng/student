@@ -96,6 +96,6 @@ When(/^I fill in cae specific required info$/) do
   on(EnquirySubmitPage) do |page|
     page.fill_in_cae_required_info
     @student_name = page.get_full_name
-    # page.submit_enquiry
+    page.submit_enquiry
   end
 end

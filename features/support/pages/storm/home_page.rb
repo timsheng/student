@@ -42,5 +42,4 @@ class HomePage
   def click_left_floating_widget
     self.left_floating_widget_element.click
   end
-
 end

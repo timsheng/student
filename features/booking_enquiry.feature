@@ -16,19 +16,18 @@ Feature: Booking Enquiry
     Then I should find this user in the first enquiry result in the booking system
 
   @cae
-  Scenario: Contact an expert from property page
-    When I go to a property page for "en-us"
+  Scenario Outline: Contact an expert from property page
+    When I go to a property page for "<locale>"
+    #When I go to a property page for "en-us"
     And I click the contact an expert button
     And I fill in cae specific required info
     And I create password in the popup dialog
     Then I should find this user in the first enquiry result in the booking system
 
-  Scenario: Contact an expert less than 6 months
-    When I go to a property page for "en-gb"
-    And I click the contact an expert button
-    And I submit enquiry less than six months as a new user
-    Then I should not find this user in the first enquiry result in the booking system
-    And I should find this user in the first student result in the booking system
+    Examples:
+    | locale  |
+    | zh-cn   |
+    | en-us   |
 
   @dev
   Scenario: Booking Enquiry as A logined User

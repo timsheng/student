@@ -15,5 +15,4 @@ class SignUpPage
     accept_terms_element.fire_event :click
     register
   end
-
 end

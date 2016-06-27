@@ -5,8 +5,10 @@ module Helper
   end
 
   def generate_base_url locale
-    "#{FigNewton.storm.row_base_url}" + "/" + locale
+    if locale == 'zh-cn'
+      "#{FigNewton.storm.base_url}"
+    else
+      "#{FigNewton.storm.row_base_url}" + "/" + locale
+    end
   end
-
-
 end
