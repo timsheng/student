@@ -3,8 +3,8 @@ class PartnerPortalPage
   include PageObject
   include DataMagic
 
-  select_list :destination_city, :id => "partner_application_studentRequirements_cityOfStudy"
-  select_list :destination_uni, :id => "partner_application_studentRequirements_studyDestinationUni"
+  text_field :destination_uni, :id => "partner_application_studentRequirements_studyDestinationUni"
+  unordered_list :autosuggest_uni, :class =>"suggest-group"
   select_list :arrival_month, :id => "partner_application_studentRequirements_studyAbroadDate"
   select_list :length_of_study, :id => "partner_application_studentDetails_lengthOfStay"
   text_field :first_name, :id => "partner_application_userInfo_firstName"
@@ -24,14 +24,10 @@ class PartnerPortalPage
   text_field :referrer_email, :id => "partner_application_referrerEmail"
   button :partner_application_submit, :id => "partner_application_submit"
 
-  def select_random_city
-    city = get_random_select_value_without_default self.destination_city_options
-    self.destination_city = city
-  end
-
-  def select_random_uni
-    uni = get_random_select_value_without_default self.destination_uni_options
-    self.destination_uni = uni
+  def select_random_uni expected_university
+    self.destination_uni = expected_university
+    autosuggest_uni_element.when_present(3)
+    autosuggest_uni_element.list_items.sample.when_present.click
   end
 
   def select_random_arrival_month
@@ -52,13 +48,7 @@ class PartnerPortalPage
     self.confirm_student_email = self.student_email
   end
 
-  def fill_in_student_details
-    select_random_city
-    begin
-    select_random_uni
-    rescue
-      puts "uni is not available"
-    end
+  def fill_in_student_details    
     select_random_arrival_month
     select_random_length_of_study
     fill_in_student_info
@@ -74,7 +64,7 @@ class PartnerPortalPage
   end
 
   def choose_contact_person
-    select_not_has_contact
+    not_has_contact_element.fire_event :click
   end
 
   def choose_contact_person_yes

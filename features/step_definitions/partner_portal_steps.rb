@@ -6,6 +6,10 @@ When(/^I get into Partner Portal$/) do
   end
 end
 
+When(/^I input "(.*?)" in university text field$/) do |expected_university|
+  on(PartnerPortalPage).select_random_uni expected_university
+end
+
 When(/^I submit enquiry for new student on partner portal$/) do
   on(PartnerPortalPage) do |page|
     page.fill_in_student_details

@@ -7,12 +7,14 @@ Feature: Submit Enquiry on Partner Portal
   Scenario: Submit Enquiry on Partner Portal for new student
     Given I'm on CN homepage
     When I get into Partner Portal
+    When I input "london" in university text field
     And I submit enquiry for new student on partner portal
     Then I can see success included in url
 
   Scenario: Submit Enquiry on Parter Potal with Overall Info
     Given I'm on CN homepage
     When I get into Partner Portal
+    When I input "london" in university text field
     And I submit enquiry for new student on partner portal with overall info
     Then I can see success included in url
 
