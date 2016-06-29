@@ -15,7 +15,7 @@ After do |scenario|
     @current_page.save_screenshot(filename)
     embed(filename, 'image/png')
   end
-  @browser.close
+    @browser.close
 end
 
 
