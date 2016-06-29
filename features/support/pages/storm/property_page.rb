@@ -26,19 +26,9 @@ class PropertyPage
     enquiry_now_elements[FIRST_ENQUIRY_NOW].click
   end
 
-  #def generate_page_url locale
-  #  base_url = generate_base_url locale
-  #  url = base_url + property_path
-  #end
-
   def property_path
     return "#{FigNewton.storm.property_path}"
   end
-
-  #def visit_specify_locale_property_page locale
-  #  url = generate_page_url locale
-  #  navigate_to url
-  #end
 
   def visit_specify_locale_property_page locale
     visit_specify_locale_page locale, property_path
