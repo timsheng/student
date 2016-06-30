@@ -7,7 +7,6 @@ end
 
 When(/^The user update profile in application details page$/) do
   on(ApplicationDetailsPage) do |page|
-    #page.go_to_uer_profile
     page.fill_in_user_profile
     @user_name = page.get_user_name
     page.submit_details
