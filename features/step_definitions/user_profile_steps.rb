@@ -22,7 +22,7 @@ Given(/^The new user get into application deatils page for "(.*?)"$/) do |locale
     Given I'm in sign up page for "#{locale}"
     When I fill in all required fields and submit
   }
-  on(ApplicationDetailsPage).visit_specify_locale_application_page locale
+  ApplicationDetailsPage.new(@browser).visit_page locale
 end
 
 Then(/^Profile percentage should be (\d+)%$/) do |arg1|

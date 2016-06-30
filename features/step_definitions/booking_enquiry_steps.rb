@@ -57,8 +57,7 @@ Then(/^I lost this enquiry by student name$/) do
 end
 
 When(/^I go to a property page for "(.*?)"$/) do |locale|
-  property_page = PropertyPage.new(@browser)
-  property_page.visit_specify_locale_property_page locale
+   PropertyPage.new(@browser).visit_page locale
 end
 
 When(/^I click the contact an expert button$/) do
