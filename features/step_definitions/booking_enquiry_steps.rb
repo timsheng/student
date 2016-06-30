@@ -32,6 +32,8 @@ end
 Then(/^I should find this user in the first enquiry result in the booking system$/) do
   visit(Booking::LoginPage).login
   visit(EnquiryListPage) do |page|
+    page.switch_to_unassigned_tab
+    page.wait_page_load(5)
     expect(page.text).to include @student_name
   end
 end

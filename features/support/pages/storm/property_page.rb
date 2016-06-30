@@ -1,3 +1,5 @@
+
+
 $:.unshift File.expand_path('..',__FILE__)
 require 'floating_widget_module'
 
@@ -24,18 +26,12 @@ class PropertyPage
     enquiry_now_elements[FIRST_ENQUIRY_NOW].click
   end
 
-  def generate_page_url locale
-    base_url = generate_base_url locale
-    url = base_url + property_path
-  end
-
   def property_path
     return "#{FigNewton.storm.property_path}"
   end
 
   def visit_specify_locale_property_page locale
-    url = generate_page_url locale
-    navigate_to url
+    visit_specify_locale_page locale, property_path
   end
 
   def click_wechat_short_banner_right
