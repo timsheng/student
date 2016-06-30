@@ -43,6 +43,14 @@ class ApplicationDetailsPage
   select_list :how_did_you_hear_about_us, :id => "application_details_studentProfile_howDidYouHearAboutUs"
   text_area :other_requirement, :id => "application_details_studentProfile_otherPreferences"
   button :submit_details, :id => "application_details_submit"
+  
+  def application_path
+    return "#{FigNewton.storm.application_path}"
+  end
+
+  def visit_specify_locale_application_page locale
+    visit_specify_locale_page locale, application_path
+  end
 
   def get_random_gender
     gender = get_random_select_value_without_default self.gender_options

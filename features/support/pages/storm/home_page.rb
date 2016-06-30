@@ -6,6 +6,7 @@ class HomePage
   include PageObject
   include SocialWidget
   include FloatingWidget
+  include Helper
 
   page_url "#{FigNewton.storm.base_url}"
 
