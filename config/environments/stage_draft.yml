@@ -4,6 +4,7 @@ storm:
   base_url: https://oslqa:m2WackNUHbAqHz51@storm-frontend-cn.dandythrust.com
   row_base_url: https://oslqa:m2WackNUHbAqHz51@storm-frontend.dandythrust.com
   property_path: /uk/london/tufnell-house
+  application_path: /my-account/application-details
   # property_path: /au/sydney/uws-village-hawkesbury-campus
   # property_path: /uk/manchester/weston-court
 booking:

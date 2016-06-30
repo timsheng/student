@@ -11,4 +11,5 @@ class LoginPage
     self.password = password
     login_btn
   end
+
 end

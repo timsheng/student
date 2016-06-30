@@ -1,5 +1,6 @@
-Given(/^I'm in sign up page$/) do
-  visit(HomePage)
+Given(/^I'm in sign up page for "(.*?)"$/) do |locale|
+  home_page = HomePage.new(@browser)
+  home_page.visit_specify_locale_page_without_path locale
   on(HomePage).login_link
   on(LoginPage).signup_link
 end

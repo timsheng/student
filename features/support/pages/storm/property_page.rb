@@ -1,5 +1,3 @@
-
-
 $:.unshift File.expand_path('..',__FILE__)
 require 'floating_widget_module'
 

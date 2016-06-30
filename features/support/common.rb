@@ -23,6 +23,11 @@ module Helper
     navigate_to url
   end
 
+  def visit_specify_locale_page_without_path (locale)
+    url = generate_base_url locale
+    navigate_to url
+  end
+
   def wait_page_load(time)
     PageObject.javascript_framework=(:jquery)
     wait_for_ajax(time)
