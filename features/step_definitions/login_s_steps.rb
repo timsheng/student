@@ -1,6 +1,5 @@
 Given(/^I'm in login page for "(.*?)"$/) do |locale|
-  home_page = HomePage.new(@browser)
-  home_page.visit_specify_locale_page_without_path locale
+  HomePage.new(@browser).visit_page locale
   on(HomePage).login_link
 end
 
