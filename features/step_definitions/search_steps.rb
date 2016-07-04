@@ -2,6 +2,15 @@ Given(/^I'm on CN homepage$/) do
   visit(HomePage)
 end
 
+Given(/^I'm on homepage for "(.*?)"$/) do |locale|
+  HomePage.new(@browser).visit_page locale
+  @locale_navigation=locale
+end
+
+When(/^I let the navigation searchbox appear$/) do
+  on(HomePage).scroll_down_homepage @locale_navigation
+end
+
 When(/^I input "(.*?)" in the hero banner searchbox$/) do |keywords|
   on(HomePage).search_keywords_in_hero_banner keywords
 end
@@ -30,7 +39,7 @@ end
 
 When(/^I input "(.*?)" in the navigation searchbox$/) do |keywords|
   on(HomePage) do |page|
-    page.search_icon_element.click
+    page.search_icon_click
     page.search_keywords_in_navigation keywords
   end
 end
