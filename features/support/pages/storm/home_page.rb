@@ -49,16 +49,11 @@ class HomePage
   end
 
   def scroll_down_homepage locale
-    if locale=="zh-cn"
-      return 0
-    else 
-      self.view_all_link_element.scroll_into_view
-    end
+    self.view_all_link_element.scroll_into_view unless locale == "zh-cn"
   end
 
   def search_icon_click
-    2.times do
-      self.search_icon_element.when_present.click
-    end
+    sleep 1
+    self.search_icon_element.when_present.click
   end
 end
