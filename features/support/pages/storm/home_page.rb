@@ -22,6 +22,7 @@ class HomePage
   button :search_button_hero_banner, :css => "form#form-search button#search"
   div :left_floating_widget, :id => "wechat-widget"
   button :close_wechat_widget, :id => "start-conversation-close"
+  link :view_all_link, :href => "/browse"
 
   def search_keywords_in_hero_banner keywords
     self.search_hero_banner = keywords
@@ -45,5 +46,19 @@ class HomePage
 
   def click_left_floating_widget
     self.left_floating_widget_element.click
+  end
+
+  def scroll_down_homepage locale
+    if locale=="zh-cn"
+      return 0
+    else 
+      self.view_all_link_element.scroll_into_view
+    end
+  end
+
+  def search_icon_click
+    2.times do
+      self.search_icon_element.when_present.click
+    end
   end
 end
