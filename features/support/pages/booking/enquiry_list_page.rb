@@ -2,7 +2,7 @@ class EnquiryListPage
   include Helper
   include PageObject
 
-  page_url "#{FigNewton.booking.base_url}/booking/admin/booking/list"
+  page_url "#{FigNewton.booking.base_url}/booking/admin/enquiry/list"
   list_item :unassigned_tab, :id => "tab-unassigned"
 
   def enquiry_need_to_be_lost_by name
