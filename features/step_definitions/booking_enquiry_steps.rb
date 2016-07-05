@@ -32,8 +32,8 @@ end
 Then(/^I should find this user in the first enquiry result in the booking system$/) do
   visit(Booking::LoginPage).login
   visit(EnquiryListPage) do |page|
-    page.switch_to_unassigned_tab
-    page.wait_page_load(5)
+    #page.switch_to_unassigned_tab
+    #page.wait_page_load(5)
     expect(page.text).to include @student_name
   end
 end
@@ -78,7 +78,7 @@ end
 When(/^I choose available room category$/) do
   @room_category = on(PropertyPage).choose_available_room_category
   @room_category.click
-  sleep 1
+  sleep 2
 end
 
 When(/^I choose available listing$/) do

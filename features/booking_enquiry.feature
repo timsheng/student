@@ -4,8 +4,8 @@ Feature: Booking Enquiry
   I want to booking enquiry
   So I can live overseas around the school
 
-  Scenario: Booking Enquiry as A New User
-    When I go to a property page
+  Scenario Outline: Booking Enquiry as A New User
+    When I go to a property page for "<locale>"
     And I choose available room category
     And I select required tenancy
     And I choose available listing
@@ -14,6 +14,11 @@ Feature: Booking Enquiry
     And I create password in the popup dialog
 #    And I complete the making of an enquiry
     Then I should find this user in the first enquiry result in the booking system
+
+    Examples:
+    | locale  |
+    | zh-cn   |
+    | en-us   |
 
   @cae
   Scenario Outline: Contact an expert from property page
@@ -29,10 +34,9 @@ Feature: Booking Enquiry
     | zh-cn   |
     | en-us   |
 
-  @dev
-  Scenario: Booking Enquiry as A logined User
-    Given The existing user logged in
-    When I go to a property page
+  Scenario Outline: Booking Enquiry as A logined User
+    Given The existing user logged in for "<locale>"
+    When I go to a property page for "<locale>"
     And I choose available room category
     And I select required tenancy
     And I choose available listing
@@ -41,9 +45,14 @@ Feature: Booking Enquiry
     Then I should find this user in the first enquiry result in the booking system
     And I lost this enquiry by student name
 
+    Examples:
+    | locale  |
+    | zh-cn   |
+    | en-us   |
+
   @room_matrix
-  Scenario: Booking Enquiry as A Existing User
-    When I go to a property page
+  Scenario Outline: Booking Enquiry as A Existing User
+    When I go to a property page for "<locale>"
     And I choose available room category
     And I select required tenancy
     And I choose available listing
@@ -52,3 +61,8 @@ Feature: Booking Enquiry
     And I input password in the popup dialog
     Then I should find this user in the first enquiry result in the booking system
     And I lost this enquiry by student name
+
+    Examples:
+    | locale  |
+    | zh-cn   |
+    | en-us   |
