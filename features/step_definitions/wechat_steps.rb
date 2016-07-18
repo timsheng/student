@@ -33,8 +33,8 @@ Given(/^I'm on SRP page$/) do
   }
 end
 
-When(/^I click wechat short banner$/) do
-  on(SearchResultPage).click_wechat_short_banner
+When(/^I click wechat conversation button$/) do
+  on(SearchResultPage).click_wechat_conversation_button
 end
 
 When(/^I scroll down and click left floating widget$/) do
@@ -44,4 +44,3 @@ end
 When(/^I click the right wechat short banner$/) do
   on(PropertyPage).click_wechat_short_banner_right
 end
-

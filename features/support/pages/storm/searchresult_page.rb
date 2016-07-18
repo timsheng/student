@@ -2,9 +2,9 @@ class SearchResultPage
   include PageObject
   include DataMagic
 
-  button :wechat_short_banner, :css =>"div.wechat-conversation-banner--srp div:nth-child(2)>button"
+  svg :wechat_conversation_button, :class =>"wechat-conversation-button__icon"
 
-  def click_wechat_short_banner
-    wechat_short_banner_element.fire_event :click
+  def click_wechat_conversation_button
+    wechat_conversation_button_element.fire_event :click
   end
 end

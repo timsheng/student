@@ -20,8 +20,6 @@ class HomePage
   elements :popular_search_text,:a, :css => "form#form-search>div.search-possibilities li>a"
   link :partner_portal_link, :href => "/p/new-student"
   button :search_button_hero_banner, :css => "form#form-search button#search"
-  div :left_floating_widget, :id => "wechat-widget"
-  button :close_wechat_widget, :id => "start-conversation-close"
   link :view_all_link, :href => "/browse"
 
   def search_keywords_in_hero_banner keywords
@@ -42,10 +40,6 @@ class HomePage
     texts << element
     end
     texts.sample
-  end
-
-  def click_left_floating_widget
-    self.left_floating_widget_element.click
   end
 
   def scroll_down_homepage locale

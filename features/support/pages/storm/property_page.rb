@@ -12,16 +12,27 @@ class PropertyPage
   FIRST_ENQUIRY_NOW = 0
 
   button :contact_an_expert, :class => "contact-an-expert-cta__button btn btn-link btn-secondary"
-  button :wechat_short_banner, :css =>"div.wechat-conversation-banner--pp div:nth-child(2)>button"
-  div :left_floating_widget, :id => "wechat-widget"
+  div :wechat_short_banner, :class =>"wechat-button-wrapper"
   button :enquiry_now, :css => "form#room-preferences button"
   spans :room_card, :class => "room-category"
   span :choose_tenancy, :css => "div#picker label>span"
+  div :room_matrix_container, :id => "room-matrix-container"
   labels :move_in_month, :css => "#move-in-option-pills>div>input[type='radio']:not(:disabled)+label"
   labels :move_out_month, :css => "#move-out-option-pills>div>input[type='radio']:not(:disabled)+label"
 
   def click_first_enquiry_now
     enquiry_now_elements[FIRST_ENQUIRY_NOW].click
+  end
+
+  def click_left_floating_widget_pp
+    self.room_matrix_container_element.scroll_into_view
+    2.times do
+      self.click_left_floating_widget
+    end
+  end
+
+  def click_wechat_short_banner_right
+    wechat_short_banner_element.when_present.click
   end
 
   def property_path
@@ -30,10 +41,6 @@ class PropertyPage
 
   def visit_specify_locale_property_page locale
     visit_specify_locale_page locale, property_path
-  end
-
-  def click_wechat_short_banner_right
-    wechat_short_banner_element.fire_event :click
   end
 
   def choose_available_room_category
